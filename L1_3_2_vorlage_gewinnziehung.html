@@ -10,7 +10,8 @@
         var gLosNr = [];           
         
         function starteCode() {
-    
+            // Variable "gezogen" erhält den Wert, der in das Eingabefeld "gezogene Losnummer" eingegeben wird
+            var gezogen = parseInt(document.getElementById("gLnr").value);
              
        
         }
@@ -41,7 +42,7 @@
  <br>   
     <p> Gezogene Losnummer: 
         <input id="gLnr" type="text" size="20" maxlength="50"> 
-        <input onclick="starteCode()" type="button" value="hinzuf&uuml;gen"> <br>
+        <input onclick="starteCode()" type="button" value="hinzufügen"> <br>
     </p>       
     <div id="gewinne">
         Gewinnlose: <br>     
