@@ -6,18 +6,32 @@
     <title>Vereinsmeisterschaften</title>
 
     <script>        
-        var platzierung19 = ["Matthias Schmitt", "Felix Holzmann", "Sabrina Eggers", "Sebastian Wolf", "Niklas Eisenbaum", "Florian Kuster", "Jan Ackerman", "Erika Ebersbacher"];
-        var platzierung18 = ["Felix Holzmann", "Erika Ebersbacher", "Matthias Schmitt", "Sebastian Wolf", "Sabrina Eggers", "Florian Kuster"];
-        var platzierung17 = ["Felix Holzmann", "Sebastian Wolf", "Sabrina Eggers"];
-        
-        function starteCode(platzierung) {
-            window.alert( "Unsere Sieger:" + "\n" + "\n" +
-                          "Gold: " + platzierung[0] + "\n" +
-                          "Silber: " + platzierung[1] + "\n" +
-                          "Bronze: " + platzierung[2] + "\n" +
-                          "Teilnehmerzahl: " + platzierung.length);    
-        }
-        
+    var platzierung19 = ["Matthias Schmitt", "Felix Holzmann", "Sabrina Eggers", "Sebastian Wolf", "Niklas Eisenbaum", "Florian Kuster", "Jan Ackerman", "Erika Ebersbacher"];
+    var platzierung18 = ["Felix Holzmann", "Erika Ebersbacher", "Matthias Schmitt", "Sebastian Wolf", "Sabrina Eggers", "Florian Kuster"];
+    var platzierung17 = ["Felix Holzmann", "Sebastian Wolf", "Sabrina Eggers"];
+
+    // top2017(), top2018() und top2019() werden aufgerufen, wenn auf die entsprechenden Buttons geklickt wird
+    function top2017() {
+        zeigeTop3(platzierung17);
+    }
+
+    function top2018() {
+        zeigeTop3(platzierung18);
+    }
+
+    function top2019() {
+        zeigeTop3(platzierung19);
+    }
+
+    function zeigeTop3(pPlatzierung) {
+        alert( "Unsere Sieger:" + "\n" + "\n" +
+                        "Gold: " + pPlatzierung[0] + "\n" +
+                        "Silber: " + pPlatzierung[1] + "\n" +
+                        "Bronze: " + pPlatzierung[2] + "\n" +
+                        "Teilnehmerzahl: " + pPlatzierung.length);    
+    }        
+
+
     </script>
 
 </head>
@@ -44,10 +58,10 @@
 	 </tr>    
  </table>
 
- <input onclick="starteCode(platzierung19)" type="button" value="Zeige TOP 3 von 2019" />
+ <input onclick="top2019()" type="button" value="Zeige TOP 3 von 2019" />
  <br>
- <input onclick="starteCode(platzierung18)" type="button" value="Zeige TOP 3 von 2018" />
+ <input onclick="top2018()" type="button" value="Zeige TOP 3 von 2018" />
  <br>
- <input onclick="starteCode(platzierung17)" type="button" value="Zeige TOP 3 von 2017" />      
+ <input onclick="top2017()" type="button" value="Zeige TOP 3 von 2017" />      
 </body>
 </html>
