@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">  
+    <title>Wetterstation</title>
+    
+    <script> 
+    
+        function starteCode() {
+            
+            var tage = [];
+            tage[0] = parseFloat(document.getElementById("mo").value);
+            tage[1] = parseFloat(document.getElementById("di").value);
+            tage[2] = parseFloat(document.getElementById("mi").value);
+            tage[3] = parseFloat(document.getElementById("don").value);
+            tage[4] = parseFloat(document.getElementById("fr").value);
+            tage[5] = parseFloat(document.getElementById("sa").value);
+            tage[6] = parseFloat(document.getElementById("so").value);
+            
+            //Auswertung MAX
+            var max = tage[0];
+            for(i=0;i<tage.length;i++)
+            {
+                if(tage[i]>max)
+                {
+                    max = tage[i];
+                }   
+            }
+            
+            //Ausertung MIN
+            var min = tage[0];
+            for(i=0;i<tage.length;i++)
+            {
+                if(tage[i]<min)
+                {
+                    min = tage[i];
+                }
+            }
+            
+            //Auswertung Mittelwert
+            var mittel = 0;
+            for(i=0;i<tage.length;i++)
+            {
+                mittel = mittel + parseFloat(tage[i]);
+                //mittel = mittel + tage[i]; //=01111111
+            }
+            mittel = mittel / tage.length;
+            
+            //Auswertung Abweichung
+            var dif = max - min;
+           
+            //Ausgabe in ID=Ergebnis
+            document.getElementById("ergebnis").innerHTML =  "Höchsttemperatur: " + max + "</br>" +
+                                                             "Tiefsttemperatur: " + min + "</br>" +
+                                                             "Durchschnittstemperatur: " + mittel + "</br>" +
+                                                             "Abweichung: " + dif;
+                                                             
+                
+        }
+    </script>
+
+</head>
+
+<body>  
+    <h1>Wochenauswertung</h1>
+
+    <table>
+      <tr>
+        <td>Montag:</td>
+        <td><input type="text" id="mo" size="20" maxlength="3"></td>
+      </tr>
+      <tr>
+        <td>Dienstag:</td>
+        <td><input type="text" id="di" size="20" maxlength="3"></td>
+      </tr> 
+      <tr>
+        <td>Mittwoch:</td>
+        <td><input type="text" id="mi" size="20" maxlength="3"></td>
+      </tr>
+      <tr>
+        <td>Donnerstag:</td>
+        <td><input type="text" id="don" size="20" maxlength="3"></td>
+      </tr>
+      <tr>
+        <td>Freitag:</td>
+        <td><input type="text" id="fr" size="20" maxlength="3"></td>
+      </tr>
+      <tr>
+        <td>Samstag:</td>
+        <td><input type="text" id="sa" size="20" maxlength="3"></td>
+      </tr>
+      <tr>
+        <td>Sonntag: </td>
+        <td><input type="text" id="so" size="20" maxlength="3"></td>
+      </tr> 
+    </table>
+
+    <input onclick="starteCode()" type="button" value="auswerten">     
+    <p id="ergebnis">     
+    </p>
+</body>
+</html>

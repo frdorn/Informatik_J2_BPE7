@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">  
+    <link rel="stylesheet" href="https://shs-start.de/it/j2/format.css" type="text/css">
+    <title>Automatische Gewinnziehung</title>
+
+    <script> 
+    
+    function starteCode() {        
+        var aGeLose = parseInt(document.getElementById("aGeLose").value);
+        var gewinnnr = [];
+        var zZahl;
+        //Ziehung
+        for(var i = 0; i < aGeLose; i++)
+        {
+            zZahl = Math.floor((Math.random() * 500) + 1);
+            gewinnnr[i] = 1000 + zZahl ;   
+        }       
+        
+        //Ausgabe
+        for(var i = 0; i< gewinnnr.length; i++)
+        {
+            document.getElementById("gewinne").innerHTML += gewinnnr[i] + "<br>";   
+        }          
+    }      
+    </script>
+    
+
+</head>
+
+<body>    
+ <table>
+	<tr>
+	   <td class="links">
+		    <h1 class="blau"> Mühlberger Sport Club </h1>
+	   </td>
+	   <td class="rechts">
+		    <img src="https://shs-start.de/it/j2/logo.jpg" alt="Vereinslogo" title="Unser neues Vereinslogo" width="50%" height="auto">
+	   </td>
+	</tr>
+ </table> 
+ <table class="halb">
+  	<tr>
+	   <td>             
+          <h1>Ziehung der Gewinnlose</h1>   
+	   </td>
+	   <td> 
+          <img src="https://shs-start.de/it/j2/lose.jpg" alt="Vereinslogo" title="Dartpfeile" width="20%" height="auto">
+     </td>
+	</tr>    
+ </table>
+ <br>   
+    <p> Geben Sie die Anzahl der Gewinnlose hier ein <input id="aGeLose" type="text" size="10" maxlength="10">  </p>
+    <input onclick="starteCode()" type="button" value="Lose ziehen"> 
+    <br> <br>    
+    <div id="gewinne">
+        Lose mit einem Gewinn: <br>     
+    </div>             
+</body>
+</html>

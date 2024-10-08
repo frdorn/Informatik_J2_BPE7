@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://shs-start.de/it/j2/format.css" type="text/css">
+    <title>Spieler der Volleyballmannschaft</title>
+    
+    
+    <script>  
+    
+      var spieler = ["Armin", "Batu", "Kai", "Sven", "Paul", "Milan"];
+      var ersatz =  ["Chris", "Dennis", "Emin", "Goran", "Luca", "Nico"];
+
+      function zeigeStartaufstellung() {
+          var laenge = spieler.length;
+          var anzeige = "";
+          for (var i = 0; i < laenge; i++) {
+              anzeige = anzeige + "\n" + "Position " + (i+1) + ": " + spieler[i];	
+          }	
+          window.alert("Startaufstellung: " + "\n" + anzeige);
+      }
+
+      function zeigeErsatzspieler() {		
+          window.alert("Diese Spieler sind Ersatzspieler: " + "\n" + "\n" + ersatz);
+      }
+
+      function zeigeKader() {
+          var kader = [];
+          kader = spieler + ersatz;
+          window.alert("Diese Spieler sind im Mannschaftskader: " + "\n" + "\n" + kader);
+      }  
+    </script>   
+</head>
+
+<body>
+ <table>
+	<tr>
+	   <td class="links">
+		    <h1 class="blau"> Mühlberger Sport Club </h1>
+	   </td>
+	   <td class="rechts">
+		    <img src="https://shs-start.de/it/j2/logo.jpg" alt="Vereinslogo" title="Unser neues Vereinslogo" width="50%" height="auto">
+	   </td>
+	</tr>
+  </table> 
+  <table class="halb">
+  	<tr>
+	   <td>             
+        <h1>Abteilung Volleyball</h1> 
+	   </td>
+	   <td> 
+        <img src="https://shs-start.de/it/j2/volleyball.jpg" alt="Volleyball" title="Volleyball" width="30%" height="auto">
+     </td>
+	</tr>    
+ </table>  
+ <br>
+ <table>
+    <tr>
+      <td class = "zwanzig">
+		      <p> Startaufstellung </p>
+      </td>
+      <td>
+          <input onclick = "zeigeStartaufstellung()" type="button" value="anzeigen">      
+	   </td> 
+    </tr>
+    <tr>
+      <td class = "zwanzig">
+          <p> Ersatzspieler</p>
+      </td>
+      <td>
+          <input onclick = "zeigeErsatzspieler()" type="button" value="anzeigen">      
+      </td> 
+    </tr>
+    <tr>
+      <td>
+		      <p> Mannschaftskader</p>
+      </td>
+      <td>
+          <input onclick = "zeigeKader()" type="button" value="anzeigen">       
+      </td> 
+    </tr>
+ </table>
+</body>
+</html>

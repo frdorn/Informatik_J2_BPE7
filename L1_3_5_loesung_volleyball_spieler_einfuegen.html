@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://shs-start.de/it/j2/format.css" type="text/css"> 
+    <title>Spieleraufnahme</title>
+    
+    
+    <script>  
+
+      var kader = ["Armin", "Batu", "Kai", "Sven", "Paul", "Milan", "Goran", "Chris","Nico", "Dennis", "Emin", "Luca"];
+	
+      function einfuegenSpieler() {
+    	var laenge = kader.length;
+        window.alert("Bisheriger Spielerkader : " + "\n" + "\n" + kader);
+        var index = parseInt(document.getElementById("ind").value);
+        var spielername = document.getElementById("name").value;
+        for (var i=laenge-1; i>=index; i--) {
+            kader[i+1] = kader[i];		   
+        }
+        kader[index] = spielername;
+        window.alert("Neuer Spielerkader: " + "\n" + "\n" + kader);
+      }
+
+    </script>   
+</head>
+
+<body>     
+ <table>
+	<tr>
+	   <td class="links">
+		    <h1 class="blau"> Mühlberger Sport Club </h1>
+	   </td>
+	   <td class="rechts">
+		    <img src="https://shs-start.de/it/j2/logo.jpg" alt="Vereinslogo" title="Unser neues Vereinslogo" width="50%" height="auto">  
+	   </td>
+	</tr>
+ </table> 
+ <br> <br>
+ <table class="halb">
+  	<tr>
+	   <td>             
+        <h1>Abteilung Volleyball - Mannschaftskader</h1>           
+	   </td>
+	   <td> 
+        <img src="https://shs-start.de/it/j2/volleyball.jpg" alt="Volleyball" title="Volleyball" width="50%" height="auto">              
+     </td>
+	</tr>    
+ </table>
+  
+ <p> Spieler hinzufügen</p>
+ <table>  
+    <tr>
+        <td class = "zehn">
+		        <p> Spielername: </p>		     
+        </td> 
+        <td>
+            <input id="name" type="text" size="10" maxlength="10">		     
+        </td> 
+    </tr>
+    <tr>
+        <td>
+		        <p> Index: 	</p>	
+        </td>   
+        <td>
+            <input id="ind" type="text" size="3" maxlength="3">	
+        </td>  		 	   
+    </tr>
+    <tr>	 
+        <td> 	
+        </td>         
+        <td>
+            <input onclick = "einfuegenSpieler()" type="button" value="einfügen">     
+        </td> 
+    </tr>
+ </table>
+</body>
+</html>

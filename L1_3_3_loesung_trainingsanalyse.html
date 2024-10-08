@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://shs-start.de/it/j2/format.css" type="text/css">  
+    <title>Trainingsanalyse</title>
+
+    <script>
+
+        function starteCode() {
+        		var wuerfe = [];
+            //Einlesen
+            wuerfe[0] = parseInt(document.getElementById("w1").value);
+            wuerfe[1] = parseInt(document.getElementById("w2").value);
+            wuerfe[2] = parseInt(document.getElementById("w3").value);
+            wuerfe[3] = parseInt(document.getElementById("w4").value);
+            wuerfe[4] = parseInt(document.getElementById("w5").value);
+            wuerfe[5] = parseInt(document.getElementById("w6").value);
+            var maxP = wuerfe[0];
+            var minP = wuerfe[0];
+            var summeP = 0;
+            //Bester Wurf
+            for(var i = 0; i < wuerfe.length; i++) {
+                if(wuerfe[i] > maxP) {
+                    maxP = wuerfe[i];
+                }
+            }
+
+            //Schlechtester Wurf
+            for(var i = 0; i < wuerfe.length; i++) {
+                if(wuerfe[i] < minP) {
+                    minP = wuerfe[i];
+                }
+            }
+
+            //durchschnittliche Punktzahl pro Wurf
+            for(var i = 0; i < wuerfe.length; i++) {
+                summeP = summeP + wuerfe[i];
+            }
+            mittelP = summeP / wuerfe.length;
+
+            //Ausgabe
+            window.alert("Bester Wurf: " + maxP + "\n" +
+                         "Schlechtester Wurf: " + minP + "\n" +
+                         "Durchschnittliche Punktzahl: " + mittelP);
+        }
+    </script>        
+</head>
+
+<body>  
+ <table>
+	<tr>
+	   <td class="links">
+		    <h1 class="blau"> Mühlberger Sport Club </h1>
+	   </td>
+	   <td class="rechts">
+        <img src="https://shs-start.de/it/j2/logo.jpg" alt="Vereinslogo" title="Unser neues Vereinslogo" width="50%" height="auto">
+	   </td>
+	</tr>
+  </table> 
+ <table class="halb">
+  <tr>
+	   <td>             
+        <h1>Abteilung Dart - Trainingsanalyse</h1>    
+	   </td>
+	   <td>
+        <img src="https://shs-start.de/it/j2/dart.jpg" alt="Pfeile" title="Dartpfeile" width="30%" height="auto">
+     </td>
+	</tr>    
+ </table>
+
+ <br> <br>
+ <table class="zeile">
+    <tr>
+        <td>1. Wurf</td>
+        <td>2. Wurf</td>
+        <td>3. Wurf</td>
+        <td>4. Wurf</td>
+        <td>5. Wurf</td>
+        <td>6. Wurf</td>
+    </tr>
+    <tr>
+        <td><input id="w1" type="text" size="3" maxlength="3" /></td>
+        <td><input id="w2" type="text" size="3" maxlength="3" /></td>
+        <td><input id="w3" type="text" size="3" maxlength="3" /></td>
+        <td><input id="w4" type="text" size="3" maxlength="3" /></td>
+        <td><input id="w5" type="text" size="3" maxlength="3" /></td>
+        <td><input id="w6" type="text" size="3" maxlength="3" /></td>
+    </tr>
+  </table> 
+  <br>
+  <input onclick="starteCode()" type="button" value="auswerten">   
+</body>
+</html>

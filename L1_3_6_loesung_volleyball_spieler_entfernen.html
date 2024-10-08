@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://shs-start.de/it/j2/format.css" type="text/css"> 
+    <title>Spielerdaten aktualisieren</title>
+    
+    
+    <script>  
+
+      var kader = ["Armin", "Batu", "Kai", "Sven", "Paul", "Milan", "Goran", "Chris","Nico", "Dennis", "Emin", "Luca"];
+	
+      function entferneSpieler() {
+        var laenge = kader.length;
+		    window.alert("Bisheriger Spielerkader : " + "\n" + "\n" + kader);
+		    var index = parseInt(document.getElementById("ind").value);
+		    for (var i = index; i < laenge - 1; i++) {
+		       kader[i] = kader[i+1];	   
+		    }
+		    kader.length = kader.length-1;
+		    window.alert("Neuer Spielerkader: " + "\n" + "\n" + kader);
+  }
+
+    </script>   
+</head>
+
+<body>     
+ <table>
+	<tr>
+	   <td class="links">
+		    <h1 class="blau"> Mühlberger Sport Club </h1>
+	   </td>
+	   <td class="rechts">
+        <img src="https://shs-start.de/it/j2/logo.jpg" alt="Vereinslogo" title="Unser neues Vereinslogo" width="50%" height="auto">
+	   </td>
+	</tr>
+ </table> 
+ <br> <br>
+ <table class="halb">
+  	<tr>
+	   <td>             
+        <h1>Abteilung Volleyball - Mannschaftskader</h1>  
+	   </td>
+	   <td>
+        <img src="https://shs-start.de/it/j2/volleyball.jpg" alt="Volleyball" title="Volleyball" width="50%" height="auto">         
+     </td>
+	</tr>    
+ </table>
+ <br>  
+ <p> Spieler aus Kader entfernen</p>
+ <table> 	
+ 	<tr>
+      <td class = "zehn">
+          <p> Index:  </p>	
+      </td>   
+      <td>
+          <p> <input id="ind" type="text" size="3" maxlength="3">	
+      </td>  		 	   
+ 	</tr>
+	<tr>
+      <td>
+      </td>  		   
+      <td>
+          <input onclick = "entferneSpieler()" type="button" value="entfernen">   
+      </td> 
+ 	</tr>
+ </table> 	
+</body>
+</html>

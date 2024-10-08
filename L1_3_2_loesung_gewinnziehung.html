@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">  
+    <link rel="stylesheet" href="https://shs-start.de/it/j2/format.css" type="text/css">
+    <title>Gewinnziehung</title>
+
+    <script>
+    
+    var gLosNr = []; 
+    
+    function starteCode() {
+    
+        var i = gLosNr.length;
+        
+        gLosNr[i] = document.getElementById("gLnr").value;
+        
+        document.getElementById("gLnr").value = ""; //Textfeld wird leer
+        
+        document.getElementById("gewinne").innerHTML += gLosNr[i] + "<br>";       
+       
+    }
+    </script>
+</head>
+
+<body>      
+ <table>
+	<tr>
+    <td class="links">
+		    <h1 class="blau"> Mühlberger Sport Club </h1>
+    </td>
+    <td class="rechts">
+        <img src="https://shs-start.de/it/j2/logo.jpg" alt="Vereinslogo" title="Unser neues Vereinslogo" width="50%" height="auto">
+    </td>
+	</tr>
+  </table> 
+  <table class="halb">
+  	<tr>
+	   <td>             
+        <h1>Ziehung der Gewinnlose</h1>  
+	   </td>
+	   <td> 
+        <img src="https://shs-start.de/it/j2/lose.jpg" alt="Vereinslogo" title="Dartpfeile" width="20%"  height="auto">
+     </td>
+	</tr>    
+ </table>
+ <br>   
+    <p> Gezogene Losnummer: 
+        <input id="gLnr" type="text" size="20" maxlength="50"> 
+        <input onclick="starteCode()" type="button" value="hinzuf&uuml;gen"> <br>
+    </p>       
+    <div id="gewinne">
+        Gewinnlose: <br>     
+    </div>
+</body>
+</html>

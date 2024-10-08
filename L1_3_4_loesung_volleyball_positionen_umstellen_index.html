@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://shs-start.de/it/j2/format.css" type="text/css"> 
+    <title>Mannschaftsaufstellung</title>
+    
+    
+    <script>  
+    
+    	var spieler = ["Armin", "Batu", "Kai", "Sven", "Paul", "Milan"];
+
+
+	function zeigeAufstellung() {
+		window.alert("Diese Spieler sind in der Startaufstellung : " + "\n" + "\n" + spieler);
+        }
+
+	function mannschaftUmstellenPos() {
+		var positionA= parseInt(document.getElementById("pos1").value);
+		var positionB= parseInt(document.getElementById("pos2").value);
+		var zwischenspeicher;
+		zwischenspeicher = spieler[positionB -1];
+		spieler[positionB -1] = spieler[positionA -1];
+		spieler[positionA -1] = zwischenspeicher;
+
+		document.getElementById("pos1").value = ""; 
+		document.getElementById("pos2").value = ""; 
+		zeigeAufstellung();
+	}
+
+    </script>   
+</head>
+
+<body>     
+ <table>
+	<tr>
+	   <td class="links">
+		    <h1 class="blau"> Mühlberger Sport Club </h1>
+	   </td>
+	   <td class="rechts">
+		    <img src="https://shs-start.de/it/j2/logo.jpg" alt="Vereinslogo" title="Unser neues Vereinslogo" width="50%" height="auto">
+	   </td>
+	</tr>
+ </table> 
+ <br> <br>
+ <table class="halb">
+  	<tr>
+	   <td>             
+        <h1>Abteilung Volleyball - Mannschaftsaufstellung</h1>  
+	   </td>
+	   <td> 
+        <img src="https://shs-start.de/it/j2/volleyball.jpg" alt="Volleyball" title="Volleyball" width="50%" height="auto">
+     </td>
+	</tr>    
+ </table>
+ <br> <br>
+ <table>
+ 	<tr>
+	   <td class = "zwanzig">
+        Startaufstellung:
+	   </td>
+     <td>
+		     <input onclick = "zeigeAufstellung()" type="button" value="anzeigen">      
+	   </td> 
+ 	</tr>
+  <tr>
+	   <td class = "zwanzig">
+        <p> Startaufstellung umstellen: </p>
+	   </td>
+	   <td>
+	   <p> Tausch der Position:  <input id="pos1" type="text" size="3" maxlength="3"> 
+         mit Position:  <input id="pos2" type="text" size="3" maxlength="3">
+     </p>
+	   </td>
+ 	</tr> 
+  <tr>
+     <td> </td>
+	   <td>
+		    <input onclick = "mannschaftUmstellenPos()" type="button" value="umstellen">
+	   </td>
+ 	</tr>
+ </table> 
+</body>
+</html>
