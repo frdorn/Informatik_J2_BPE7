@@ -2,13 +2,21 @@
 <html lang="de">
 <head>
     <meta charset="utf-8">  
-    <title>Beispiele suche Maximum</title>
+    <title>Beispiel Suche Maximum</title>
 
     <script>
     var daten = [5, 13, 78, 93, 20, 1, 91]
 
     function suche_maximum() {
-
+        // Annahme: erstes Element ist das Maximum
+        var max = daten[0];
+        // Vergleiche alle weiteren Elemente mit dem Maximum
+        for (var i = 1; i < daten.length; i++) {
+            if (daten[i] > max) {
+                max = daten[i];
+            }
+        }
+        alert(max);
     }
         
     
